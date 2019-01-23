@@ -1,17 +1,32 @@
 package com.psl.util;
 
-public class BankAccount {
-	private String number;
-	private double balance;
-	public BankAccount() {
-		super();
-		
+public class BankAccount implements Comparable<BankAccount>{
+	private String fullName;
+	public BankAccount(String fullName,String number, double balance) {
+		this(number,balance);
+		this.fullName = fullName;
 	}
+	
+	
 	public BankAccount(String number, double balance) {
 		super();
+		
 		this.number = number;
 		this.balance = balance;
 	}
+	public BankAccount() {
+		super();
+		
+	} String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+	private String number;
+	private double balance;
+	
+	
 	public String getNumber() {
 		return number;
 	}
@@ -28,7 +43,7 @@ public class BankAccount {
 @Override
 public String toString()
 {
-	return String.format("BankAccount[%s%f]",getNumber(),getBalance());
+	return String.format("BankAccount[%s,%s,%f]",getFullName(),getNumber(),getBalance());
 
 }
 @Override
@@ -53,6 +68,15 @@ public boolean equals(Object obj) {
 	} else if (!number.equals(other.number))
 		return false;
 	return true;
+}
+@Override
+public int compareTo(BankAccount anotherAccount) {//for treeset order bankaccount objects on the basic bankaccount balance
+	if(getBalance()>anotherAccount.getBalance())
+		return 1;
+	else if(getBalance()<anotherAccount.getBalance())
+		return -1;
+	
+	return 0;
 }
 
 

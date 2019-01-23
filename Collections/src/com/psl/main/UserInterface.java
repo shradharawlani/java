@@ -1,7 +1,9 @@
 package com.psl.main;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class UserInterface {
 
@@ -24,5 +26,18 @@ public class UserInterface {
 		}
         //if(str.indexOf("new"))//index of str not match return -1
        
+       Iterator<String> itr=str.iterator();//interface
+       while(itr.hasNext())
+       {
+    	   System.out.println(itr.next());
+       }
+       ListIterator<String> lst_itr=str.listIterator();
+       while(lst_itr.hasPrevious())
+       {
 
-}}
+       System.out.println(lst_itr.previous());
+       
+       
+       }
+	}
+       }
