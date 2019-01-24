@@ -1,4 +1,4 @@
-package com.psl.util;
+package com.psl.client;
 
 import java.util.Date;
 
