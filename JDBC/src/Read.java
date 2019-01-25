@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.sql.Clob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -69,11 +71,18 @@ public static void main(String[] args) {
 	     while(res.next())
 	     {   
 	     
-	    	 
-	    	 fw.write(res.getInt(1));
+	    	 Clob c=res.getClob(1);
+	    	 Reader r=c.getCharacterStream();
+	    	 int reads=0;
+	    	 while((reads=r.read())!=-1)
+	    	 {
+	    		 fw.write(reads);
+	    	 }
+	    	// fw.write(res.getByte(1));
 	    	 String s=res.getString(2);
 	         byte[] names=s.getBytes();
-	         fw.write(names);
+	        fw.write(names);
+	        
 	         
 	     }
 		
