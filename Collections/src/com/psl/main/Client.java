@@ -16,7 +16,7 @@ import com.psl.util.*;
 public class Client {
 
 	public static void main(String[] args) {
-		Stack<String> s=new Stack<String>(10);//datatype should be class and interface
+		/*Stack<String> s=new Stack<String>(10);//datatype should be class and interface
 		s.push("Today is");
 		s.push("is");
 		s.push("Tuesday");
@@ -86,13 +86,13 @@ public class Client {
 		System.out.println("========================");
 		Set<BankAccount> accountObjects=new LinkedHashSet<BankAccount>();//unique value but use linked list maintain insertion order linkhash a
 		//maintain hashset to maintain order of insert and return fetch data by database use hash set to maintain order
-		accountObjects.add(new BankAccount("aaa","235",5474.6));
-		accountObjects.add(new BankAccount("bbb","239",5479.6));
-		accountObjects.add(new BankAccount("ccc","235",5478.6));
+		//accountObjects.add(new BankAccount("aaa","235",5474.6));
+		//accountObjects.add(new BankAccount("bbb","239",5479.6));
+		//accountObjects.add(new BankAccount("ccc","235",5478.6));
 		for(BankAccount ac:accountObjects)
 		{
 			System.out.println(ac);
-		}
+		}*/
 		System.out.println("========================");
 		
 		Map<String,BankAccount> m;//unique
@@ -117,12 +117,12 @@ public class Client {
 		Map<Aadhar,List<BankAccount>> data;
 		//data=new TreeMap();//order everything by key key value comprable implements in aadhar class
 		//data=new hashmap(); for i
-		public static Map<Aadhar,List<BankAccount>> readFromFile(String fileName)
+		//public static Map<Aadhar,List<BankAccount>> readFromFile(String fileName)
 		{
 	
 		}
 		
-		public static void fetchAccountDetailsFromDb(Map<Aadhar,List<BankAccount>> data)
+		//public static void fetchAccountDetailsFromDb(Map<Aadhar,List<BankAccount>> data)
 		{
 	
 		}
