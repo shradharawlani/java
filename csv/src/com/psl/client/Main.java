@@ -1,42 +1,36 @@
 package com.psl.client;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 
 public class Main {
 public static void main(String[] args) {
 	String str=null;
-	try
-	{
-
-		  FileInputStream fin=new FileInputStream("csv.txt");    
-		  BufferedInputStream bin=new BufferedInputStream(fin);    
-
-		int i,j=0;
-		while((i=bin.read())!=-1)
-		{
-			
-			char[] c=new char[100];
-			c[j]=(char)i;
-			
-			
-			j++;
-			
-			//System.out.print(str.copyValueOf(c).trim());
-			
-			String[]  field;
-			String[]  data=null;
-			  field=str.copyValueOf(c).trim().split(",");
-			
-			 for(String s:field)
-			 {
-				System.out.print(s);
-				data[0]=s;
-			 }
-		}
+	 
+	    
+	    	
+	    		
+	    		
+	    
+	    	try(File in = new File("H:\\Users\\shradha_rawlani\\Desktop\\csv.txt");
+	    	BufferedReader br = new BufferedReader(new File(in))
+	    	{
+          String row;
+          while((row=br.readLine())!=null)
+          {
+        	  String[] data=row.split(",");
+        	  for(String s:data)
+      		{
+      			System.out.println(s);
+      		}
+          }
+		
 		
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
