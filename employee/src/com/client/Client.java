@@ -53,10 +53,10 @@ Set <Payslip> e=new HashSet<Payslip>();
 	}
 	
 	public static Map<Employee, Payslip> filterEmployeeRecordsByMonth(Map<Employee, Set<Payslip>> employeeDetails, String month) {
-		Map<Employee, Payslip> filteredRecords = new HashMap<Employee, Payslip>();
+		Map<Employee, Payslip> filteredRecords = new HashMap<Employee, Payslip>(new Month());
 		 for(Map.Entry<Employee, Payslip> entry:filteredRecords.entrySet()){    
 			    
-	System.out.println(entry.getKey());
+	
 		 }
 		return filteredRecords;
 	}
